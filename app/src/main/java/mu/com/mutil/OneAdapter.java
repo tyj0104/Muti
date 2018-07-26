@@ -8,6 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
+import mu.com.mutil.bean.MoviceItemData;
+
 /**
  * Created by ${TianYingJie} on 2018/7/26.
  */
@@ -15,12 +21,14 @@ import android.widget.TextView;
 public class OneAdapter extends BaseAdapter{
 
     private Context context = null;
-    public OneAdapter(Context context) {
+    private List <MoviceItemData> mDatas;
+    public OneAdapter(Context context,List <MoviceItemData> datas) {
         this.context = context;
+        this.mDatas = datas;
     }
     @Override
     public int getCount() {
-        return 20;
+        return mDatas.size() == 0? 0:mDatas.size();
     }
 
     @Override
@@ -47,11 +55,20 @@ public class OneAdapter extends BaseAdapter{
             mHolder.year = (TextView) convertView.findViewById(R.id.year);
             mHolder.actors = (TextView) convertView.findViewById(R.id.actors);
             mHolder.language = (TextView) convertView.findViewById(R.id.language);
+            mHolder.content = (TextView) convertView.findViewById(R.id.content);
             mHolder.iv_ls = (ImageView) convertView.findViewById(R.id.iv_ls);
             convertView.setTag(mHolder);
         } else {
             mHolder = (ViewHolder) convertView.getTag();
         }
+        MoviceItemData md = mDatas.get(position);
+        mHolder.title.setText(md.getTitle());
+        mHolder.genres.setText(md.getTYPES());
+        mHolder.year .setText(md.getDirect());
+        mHolder.actors.setText(md.getPlayer()); ;
+        mHolder.language.setText(md.getScores());
+        Glide.with(context).load(md.getPoster()).asBitmap().into(mHolder.iv_ls);
+        mHolder.content.setText(md.getContent());
         return convertView;
     }
 
@@ -63,5 +80,6 @@ public class OneAdapter extends BaseAdapter{
         private TextView actors;
         private TextView year;
         private ImageView iv_ls;
+        private TextView content;
     }
 }
