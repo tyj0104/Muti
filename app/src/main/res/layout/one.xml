@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:id="@+id/iv_ls"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img"
+            android:layout_width="80dp"
+            android:layout_height="100dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/iv_ls"
+            android:layout_width="80dp"
+            android:layout_height="100dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:text="片名"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/genres"
+                android:text="剧情"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/language"
+                android:text="英语"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/actors"
+                android:text="主演"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/year"
+                android:text="主演"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+<TextView
+    android:textSize="20dp"
+    android:layout_marginTop="15dp"
+    android:text="内容简介:"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="10dp"
+        android:layout_marginTop="15dp"
+        android:text="一道亮光划过天际，太平洋上波涛汹涌，海浪以不可思议的速度将一架货机卷入海里；巴哈马丛林中:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
